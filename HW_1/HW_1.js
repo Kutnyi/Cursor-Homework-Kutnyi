@@ -6,10 +6,10 @@ const maxPrice = Math.max(jeep, mazda, kia);
 const minPrice = Math.min(jeep, mazda, kia);
 const sumGoods = (jeep + mazda + kia);
 
-const wholePrice = Math.floor (jeep) + Math.floor (mazda) + Math.floor (kia);
-const roundedPrice = Math.round (wholePrice / 100) * 100;
+const wholePrice = Math.floor (sumGoods);
+const roundedPrice = Math.ceil (sumGoods);
 
-const isEvenNumber = (wholePrice % 2 === 0);
+const isEvenNumber = Math.floor((sumGoods) % 2);
 
 const remainder = 500 - sumGoods;
 const averageValue = +(sumGoods / 3) .toFixed(2)
