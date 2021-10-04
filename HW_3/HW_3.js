@@ -3,18 +3,15 @@ const firstLetterBig = (anyname) => {
 };
 
 const getMaxDigit = (anynumber) => {
-    if (number === 0){
-        return 0
-    } else {
-        return Math.max(number % 10, getMaxDigit(Math.floor(number / 10)))
-    };
+    const quantity = anynumber.toString().split('');
+    return Math.max(...quantity);
 };
 
 const countLetterInWord = (letter, word) => {
     let count = 0
     for(let i = 0; i< word.length; i++) {
         if (word[i].toLowerCase() === letter.toLowerCase()) {
-            count++;
+            count +=1;
         };
     };
 };
@@ -38,22 +35,16 @@ const deleteLetter = (letter, word) => {
     return result;
 };
 
-const deleteDoubleLetter = (str) => {
-     let newString = str.toLowerCase();
-     let result = '';
-     for(let i = 0; i< newString.length; i++) {
-         if (newString.replaceAll(newString[i], "").length === newString.length - 1) {
-             result += newString[i];
-         };
-     };
-     return result;
+const salaryTaxOff = (salary) => {
+    let result = salary - ((19.5 * salary)/100);
+    return result;
 };
 
 
 
-console.log('Функція №1: ${firstLetterBig ("rOmAn")}');
-console.log('Функція №2: ${getMaxDigit ("1236, 6.987, 9.385, 8")}');
-console.log('Функція №3: ${countLetterInWord ("а", "Абабагаламага")}');
-console.log('Функція №4: ${getRandomPassword (7)}');
-console.log('Функція №5: ${deleteLetter ("l", "blablabla")}');
-console.log('Функція №6: ${deleteDoubleLetter ("Бісквіт був дуже ніжним")}');
+console.log(`Функція №1: ${firstLetterBig ("rOmAn")}`);
+console.log(`Функція №2: ${getMaxDigit ("1236, 6.987, 9.385, 8")}`);
+console.log(`Функція №3: ${countLetterInWord ("а", "Абабагаламага")}`);
+console.log(`Функція №4: ${getRandomPassword (7)}`);
+console.log(`Функція №5: ${deleteLetter ("l", "blablabla")}`);
+console.log(`Функція №6: ${salaryTaxOff (1000)}`);
